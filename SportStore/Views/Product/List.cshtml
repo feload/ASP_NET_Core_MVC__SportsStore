@@ -1,9 +1,12 @@
-﻿@model IEnumerable<Product>
-@foreach (Product product in @Model)
+﻿@model ProductsListViewModel
+
+@foreach (Product product in @Model.Products)
 {
     <div>
         <h3>@product.Name</h3>
         <p>@product.Description</p>
         <h4>@product.Price.ToString("c")</h4>
-    </div> 
+    </div>
 }
+
+<div page-model="@Model.PagingInfo" page-action="List"></div>
